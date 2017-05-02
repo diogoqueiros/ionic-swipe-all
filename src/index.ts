@@ -1,0 +1,1 @@
+export { IonicSwipeAllModule } from './module';
