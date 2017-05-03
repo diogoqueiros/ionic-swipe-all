@@ -8,6 +8,8 @@ log.txt
 *.sublime-workspace
 .vscode/
 npm-debug.log*
+*.ngsummary.json
+*.ngfactory.ts
 
 .idea/
 .sass-cache/
