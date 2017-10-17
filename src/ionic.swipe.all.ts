@@ -1,12 +1,30 @@
-import { Injectable } from '@angular/core';
+import { Directive, ElementRef, EventEmitter, OnInit, Output } from '@angular/core';
 import { HammerGestureConfig } from '@angular/platform-browser';
 
 import * as Hammer from 'hammerjs';
 
-@Injectable()
-export class IonicSwipeAll extends HammerGestureConfig  {
+@Directive({
+  selector: '[swipeAll]',
+})
+export class IonicSwipeAll extends HammerGestureConfig implements OnInit {
 
-  overrides = {
-    swipe: { direction: Hammer.DIRECTION_ALL },
-  };
+  @Output() swipe = new EventEmitter<any>();
+  @Output() swipeup = new EventEmitter<any>();
+  @Output() swipedown = new EventEmitter<any>();
+
+  private hammer: any = Hammer;
+
+  constructor(private elem: ElementRef) {
+    super();
+  }
+
+  ngOnInit(): void {
+    const instance = new Hammer(this.elem.nativeElement);
+    instance.get('swipe').set({ direction: this.hammer.DIRECTION_ALL });
+
+    instance.on('swipe', event => this.swipe.emit(event));
+    instance.on('swipeup', event => this.swipeup.emit(event));
+    instance.on('swipedown', event => this.swipedown.emit(event));
+  }
+
 }
