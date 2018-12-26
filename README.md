@@ -8,15 +8,11 @@ Ionic Swipe All allow Ionic (≥ v2) to recognize both horizontal and vertical s
 npm install --save ionic-swipe-all
 ```
 
-**For Ionic 2 RC.0 and later:**
-
 ```typescript
 import { IonicSwipeAllModule } from 'ionic-swipe-all';
 
 @NgModule({
-  imports: [
-    IonicSwipeAllModule,
-  ],
+  imports: [IonicSwipeAllModule],
 })
 export class AppModule {
 }
@@ -28,7 +24,7 @@ With this module you can use `(swipeup)` and `(swipedown)` events. In the `(swip
 Just add the `swipeAll` property to the element you want to swipe and use the events as needed.
 The `(swipeleft)` and `(swiperight)` events are available too.
 
-```javascript
+```typescript
 @Component({
     template: `
       <div swipeAll
