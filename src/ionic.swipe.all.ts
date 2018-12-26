@@ -20,7 +20,7 @@ export class IonicSwipeAll extends HammerGestureConfig implements OnInit {
 
   ngOnInit(): void {
     const instance = new Hammer(this.elem.nativeElement);
-    instance.get('swipe').set({ direction: this.hammer.DIRECTION_ALL });
+    instance.get('swipe').set({ direction: this.hammer.DIRECTION_VERTICAL });
 
     instance.on('swipe', event => this.swipe.emit(event));
     instance.on('swipeup', event => this.swipeup.emit(event));
