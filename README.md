@@ -1,11 +1,21 @@
 # Ionic Swipe All
 
-Ionic Swipe All allow Ionic (≥ v2) to recognize both horizontal and vertical swipe gesture.
+Ionic Swipe All allow Ionic to recognize both horizontal and vertical swipe gesture.
+
+## Requirements
+
+- **Angular**: 7+
 
 ## Installation
 
 ```
 npm install --save ionic-swipe-all
+```
+
+For previous versions of Angular, please use v1.3.0:
+
+```
+npm install --save ionic-swipe-all@1.3.0
 ```
 
 ```typescript
