@@ -1,14 +1,12 @@
 {
   "name": "ionic-swipe-all",
   "version": "1.3.0",
-  "description": "Allow Ionic (≥ v2) to recognize both horizontal and vertical swipe gesture.",
+  "description": "Allow Ionic 4 to recognize both horizontal and vertical swipe gesture.",
   "main": "./dist/index.js",
   "typings": "./dist/index.d.ts",
   "scripts": {
-    "build": "npm run clean && tsc && ngc && npm run clean-src",
-    "clean": "rimraf ./dist",
-    "clean-src": "rimraf ./src/*.ngsummary.json & rimraf ./src/*.ngfactory.ts",
-    "prepublish": "npm run build"
+    "build": "ngc",
+    "prepare": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -26,19 +24,17 @@
     "url": "https://github.com/diogoqueiros/ionic-swipe-all/issues"
   },
   "dependencies": {
-    "@angular/common": "5.1.0-beta.2",
-    "@angular/compiler": "5.1.0-beta.2",
-    "@angular/compiler-cli": "5.1.0-beta.2",
-    "@angular/core": "5.1.0-beta.2",
-    "@angular/platform-browser": "5.1.0-beta.2",
-    "@angular/platform-browser-dynamic": "5.1.0-beta.2",
     "hammerjs": "2.0.8"
   },
   "devDependencies": {
-    "@angular/cli": "1.6.0",
-    "@types/hammerjs": "2.0.34",
-    "rimraf": "2.6.2",
-    "typescript": "2.4.2"
+    "@angular/common": "7.2.4",
+    "@angular/core": "7.2.4",
+    "@angular/cli": "7.2.4",
+    "@angular/compiler": "7.2.4",
+    "@angular/compiler-cli": "7.2.4",
+    "@angular/platform-browser": "7.2.4",
+    "hammerjs": "2.0.8",
+    "typescript": "3.1.6"
   },
   "engines": {
     "node": ">=0.8.0"
